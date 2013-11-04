@@ -2,4 +2,8 @@
 
 FNAME=$1
 
-ffmpeg -y -i $FNAME ${FNAME/.*/.flac}
+new_name=${FNAME/.*/.flac}
+
+ffmpeg -y -v quiet -i $FNAME $new_name
+
+echo $new_name
